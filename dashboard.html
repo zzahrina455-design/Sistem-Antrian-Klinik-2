@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard Klinik</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            overflow-x:hidden;
+            background:hsl(125, 96%, 78%);
+        }
+/* sidebar */
+        #fotoProfil{
+            object-fit:cover;
+            border:3px solid #9cf82b;
+        }
+        .sidebar{
+            height:100vh;
+            background:#a2ff9a;
+            color:black;
+        }
+        .sidebar a{
+            color:black;
+            text-decoration:none;
+            display:block;
+            padding:10px;
+        }
+        .sidebar a:hover{
+            background:#9af592;
+        }
+/* content */
+        .content{
+            padding:10px;
+            background:#ffffff;
+            min-height:100vh;
+        }
+        .card{
+            box-shadow:0 3px 8px rgba(0,0,0,0.2);
+            background:white;
+        }
+        .logout-btn{
+            border:3px solid #4caf50;
+            border-radius:10px;
+            font-weight:bold;
+        }
+        </style>
+    </head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+<!-- SIDEBAR -->
+    <div class="col-md-2 sidebar">
+    <div class="text-center mt-3">
+        <img id="fotoProfil"
+            src="https://via.placeholder.com/80"
+            class="rounded-circle mb-2"
+            width="80"
+            height="80">
+        
+        <small id="emailUser">email@gmail.com</small>
+        <input type="file" id="uploadFoto" class="form-control mt-2">
+    </div>
+    <hr>
+        <a href="#" onclick="showDashboard()">Dashboard</a>
+        <a href="#" onclick="showPoli()">Poliklinik</a>
+        <a href="#" onclick="showJadwal()">Jadwal Dokter</a>
+        <a href="#" onclick="showAntrian()">Ambil Antrian</a>
+    <hr>
+        <a href="login.html" class="btn btn-outline-success w-100 mt-2">Logout</a>
+    </div>
+<!-- CONTENT -->
+    <div class="col-md-10 content">
+        <h3 id="judul">Dashboard</h3>
+    <div id="isi">
+<!-- dashboard default -->
+    <div class="row">
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Total Poliklinik</h5>
+        <h2>10</h2>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Total Dokter</h5>
+        <h2>30</h2>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Antrian Hari Ini</h5>
+        <h2>12</h2>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Pasien</h5>
+        <h2>40</h2>
+    </div>
+    </div>
+    </div>
+
+    <div class="row mt-3">
+    <div class="col-md-12 content">
+    <div class="card p-0">
+        <iframe
+            src="https://www.google.com/maps?q=RSUD+Ibnu+Sina+Gresik&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;">
+        </iframe>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <script>
+// DASHBOARD
+function showDashboard(){
+    document.getElementById("judul").innerHTML="Dashboard"
+    document.getElementById("isi").innerHTML=`
+
+    <div class="row">
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Total Poliklinik</h5>
+        <h2>10</h2>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Total Dokter</h5>
+        <h2>30</h2>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Antrian</h5>
+        <h2>12</h2>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+    <div class="card p-3">
+        <h5>Pasien</h5>
+        <h2>40</h2>
+    </div>
+    </div>
+
+    </div>
+
+    <div class="row mt-3">
+    <div class="col-md-12 content">
+    <div class="card p-0">
+        <iframe
+            src="https://www.google.com/maps?q=RSUD+Ibnu+Sina+Gresik&output=embed"
+            width="100%"
+            height="500">
+            style="border:0;"
+        </iframe>
+    </div>
+    </div>
+    </div>
+`
+}
+// POLIKLINIK
+function showPoli(){
+    document.getElementById("judul").innerHTML="Poliklinik"
+    document.getElementById("isi").innerHTML=`
+    <table class="table table-bordered">
+<tr>
+    <th>No</th>
+    <th>Nama</th>
+    <th>Jam</th>
+</tr>
+
+<tr>
+    <td>1</td>
+    <td>Poliklinik Anak</td>
+    <td>08.00-17.00</td>
+</tr>
+
+<tr>
+    <td>2</td>
+    <td>Poliklinik Gigi</td>
+    <td>09.00-15.00</td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>Poliklinik Bedah</td>
+    <td>08.00-15.00</td>
+</tr>
+
+<tr>
+    <td>4</td>
+    <td>Poliklinik Saraf</td>
+    <td>08.00-16.05</td>
+</tr>
+
+<tr>
+    <td>5</td>
+    <td>Poliklinik Jiwa</td>
+    <td>14.05-15.00</td>
+</tr>
+
+<tr>
+    <td>6</td>
+    <td>Poliklinik THT</td>
+    <td>08.00-14.00</td>
+</tr>
+
+<tr>
+    <td>7</td>
+    <td>Poliklinik Mata</td>
+    <td>08.00-14.00</td>
+</tr>
+
+<tr>
+    <td>8</td>
+    <td>Poliklinik Gizi</td>
+    <td>08.00-14.00</td>
+</tr>
+
+<tr>
+    <td>9</td>
+    <td>Poliklinik Rehab Medis</td>
+    <td>12.30-13.30</td>
+</tr>
+
+<tr>
+    <td>10</td>
+    <td>Poliklinik Paru</td>
+    <td>08.30-20.00</td>
+</tr>
+</table>
+`
+}
+// JADWAL
+function showJadwal(){
+    document.getElementById("judul").innerHTML="Jadwal Dokter"
+    document.getElementById("isi").innerHTML=`
+<ul>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691710733202-d6cc404f-7458" target="_blank">Poliklinik Anak</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691710733334-e613fef9-e24b" target="_blank">Poliklinik Gigi</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691713100860-40401213-b11f" target="_blank">Poliklinik Bedah</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691712244025-84a56bb6-d990" target="_blank">Poliklinik Saraf</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691710733351-dc8d5756-cbc4" target="_blank">Poliklinik Jiwa</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691712243208-5d2468ef-5792" target="_blank">Poliklinik THT</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691712355138-0493dd09-77be" target="_blank">Poliklinik Mata</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691712354659-77022e45-652e" target="_blank">Poliklinik Paru</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691710733300-640e2e3e-b2eb" target="_blank">Poliklinik Gizi</a></li>
+    <li><a href="https://www.rsibnusina.com/dokter/jadwal-dokter/#1691712884806-ea11f606-a683" target="_blank">Poliklinik Rehab Medis</a></li> 
+</ul>
+`
+}
+// ANTRIAN
+let no=0
+function showAntrian(){
+    document.getElementById("judul").innerHTML="Ambil Antrian"
+    document.getElementById("isi").innerHTML=`
+    <input id="nama" type="text" class="form-control mb-2" placeholder="Nama">
+    <input id="tgl" type="date" class="form-control mb-2">
+    <select id="poli" class="form-control mb-2">
+        <option>Poliklinik</option>
+        <option>Poliklinik Anak</option>
+        <option>Poliklinik Gigi</option>
+        <option>Poliklinik Bedah</option>
+        <option>Poliklinik Saraf</option>
+        <option>Poliklinik Jiwa</option>
+        <option>Poliklinik THT</option>
+        <option>Poliklinik Mata</option>
+        <option>Poliklinik Paru</option>
+        <option>Poliklinik Rehab Medis</option>
+        <option>Poliklinik Gizi</option>
+    </select>
+    <button onclick="ambil()" class="btn btn-success">
+        Ambil
+    </button>
+    <div id="hasil" class="mt-3"></div>
+`
+}
+function ambil(){
+    no++
+    let n=document.getElementById("nama").value
+    let t=document.getElementById("tgl").value
+    let p=document.getElementById("poli").value
+    document.getElementById("hasil").innerHTML=
+    "Nomor : A-"+no+
+    "<br>Nama :"+n+
+    "<br>Tanggal :"+t+
+    "<br>Poli :"+p
+}
+
+    let nama = localStorage.getItem("nama");
+    let email = localStorage.getItem("email");
+    if(nama){
+        document.getElementById("namaUser").innerHTML = nama;
+    }
+    if(email){
+        document.getElementById("emailUser").innerHTML = email;
+    }
+        document.getElementById("uploadFoto").addEventListener("change", function(){
+    let file = this.files[0];
+    let reader = new FileReader();
+    reader.onload = function(e){
+        document.getElementById("fotoProfil").src = e.target.result;
+        localStorage.setItem("foto", e.target.result);
+    }
+    reader.readAsDataURL(file);
+});
+    let foto = localStorage.getItem("foto");
+    if(foto){
+        document.getElementById("fotoProfil").src = foto;
+    }
+    
+    </script>
+</body>
+</html>
